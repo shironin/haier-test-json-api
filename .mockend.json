@@ -20,7 +20,7 @@
         "session": { "belongsTo": "Session" }
     },
     "Session": {
-        "location": { "hasOne": "Location" },
+        "location": { "belongsTo": "Location" },
         "oven": { "belongsTo": "Oven" },
         "datetime": { "dateTime": {"min": "2010-01-01T00:00:00Z", "max": "2020-12-31T23:59:59Z"} },
         "duration": { "int": { "min": 5, "max": 1000} },
