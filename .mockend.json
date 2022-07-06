@@ -17,10 +17,10 @@
         "cookwareWeight": { "int": { "min": 5, "max": 10000} },
         "texture": { "int": { "min": -5, "max": 5} },
         "comment": { "string": {} },
-        "authorPost": { "belongsTo": "Session" }
+        "session": { "belongsTo": "Session" }
     },
     "Session": {
-        "location": { "belongsTo": "Location" },
+        "location": { "hasOne": "Location" },
         "oven": { "belongsTo": "Oven" },
         "datetime": { "dateTime": {"min": "2010-01-01T00:00:00Z", "max": "2020-12-31T23:59:59Z"} },
         "duration": { "int": { "min": 5, "max": 1000} },
