@@ -1,5 +1,32 @@
 {
     "User": {
         "title": { "string": {} }
+    },
+    "Location": {
+        "title": { "string": {} }
+    },
+    "OvenProgram": {
+        "title": { "string": {} }
+    },
+    "Oven": {
+        "title": { "string": {} }
+    },
+    "Feedback": {
+        "beforeCookingWeight": { "int": { "min": 5, "max": 10000} },
+        "afterCookingWeight": { "int": { "min": 5, "max": 10000} },
+        "cookwareWeight": { "int": { "min": 5, "max": 10000} },
+        "texture": { "int": { "min": -5, "max": 5} },
+        "comment": { "string": {} },
+        "authorPost": { "belongsTo": "Session" }
+    },
+    "Session": {
+        "location": { "belongsTo": "Location" },
+        "oven": { "belongsTo": "Oven" },
+        "datetime": { "dateTime": {} },
+        "duration": { "int": { "min": 5, "max": 1000} },
+        "program": { "belongsTo": "OvenProgram" },
+        "resultImage": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
+        "juicinessImage": { "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080" },
+        "feedbacks": { "hasMany": "Feedback" }
     }
 }
